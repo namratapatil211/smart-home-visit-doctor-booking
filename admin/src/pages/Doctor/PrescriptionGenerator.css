@@ -1,0 +1,765 @@
+/* --- Base Container and Layout --- */
+
+.generator-container {
+
+    max-width: 1200px;
+
+    margin: 20px auto;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    padding: 30px;
+
+    font-family: 'Arial', sans-serif;
+
+}
+
+
+
+.content-area {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr; /* Main form takes 2 parts, preview 1 part */
+
+    gap: 30px;
+
+    margin-top: 20px;
+
+}
+
+
+
+/* --- Progress Bar --- */
+
+.progress-bar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+
+.progress-step {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    position: relative;
+
+    flex: 1;
+
+}
+
+
+
+.progress-icon {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    background-color: #e0e7ff;
+
+    color: #4f46e5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+
+
+.progress-step.active .progress-icon {
+
+    background-color: #10b981;
+
+    color: white;
+
+}
+
+
+
+.progress-label {
+
+    font-size: 0.85em;
+
+    color: #6b7280;
+
+}
+
+
+
+/* --- Form Elements --- */
+
+.form-step {
+
+    padding: 20px;
+
+    border: 1px solid #f3f4f6;
+
+    border-radius: 8px;
+
+    background-color: #f9fafb;
+
+}
+
+
+
+.step-title {
+
+    font-size: 1.8em;
+
+    color: #1f2937;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.step-description {
+
+    font-size: 0.9em;
+
+    color: #6b7280;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.form-grid, .form-grid-med {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+
+
+.form-grid-med {
+
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+
+
+.form-grid-med .span-2 {
+
+    grid-column: span 2;
+
+}
+
+.form-grid-med .span-4 {
+
+    grid-column: span 4;
+
+}
+
+
+
+label {
+
+    display: block;
+
+    font-size: 0.9em;
+
+    color: #374151;
+
+    font-weight: 600;
+
+}
+
+
+
+.form-input {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 5px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+
+    font-size: 0.9em;
+
+    transition: border-color 0.2s;
+
+}
+
+
+
+.form-input:focus {
+
+    border-color: #10b981;
+
+    outline: none;
+
+    box-shadow: 0 0 0 1px #10b981;
+
+}
+
+
+
+/* --- Condition Templates --- */
+
+.condition-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 15px;
+
+}
+
+
+
+.condition-card {
+
+    border: 2px solid #e5e7eb;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+    background-color: #ffffff;
+
+}
+
+
+
+.condition-card:hover {
+
+    border-color: #9ca3af;
+
+    background-color: #f3f4f6;
+
+}
+
+
+
+.condition-card.active {
+
+    border-color: #10b981;
+
+    background-color: #d1fae5;
+
+    box-shadow: 0 0 0 2px #10b981;
+
+}
+
+
+
+.card-title {
+
+    font-weight: bold;
+
+    color: #1f2937;
+
+}
+
+
+
+.card-category {
+
+    font-size: 0.8em;
+
+    color: #6b7280;
+
+}
+
+
+
+/* --- Medication List --- */
+
+.flex-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.medication-list {
+
+    max-height: 400px;
+
+    overflow-y: auto;
+
+    padding-right: 10px;
+
+}
+
+
+
+.medication-item {
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    background-color: #ffffff;
+
+}
+
+
+
+.med-header {
+
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    border-bottom: 1px dashed #eee;
+
+    padding-bottom: 8px;
+
+}
+
+
+
+.med-counter {
+
+    background-color: #fcd34d;
+
+    color: #1f2937;
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 0.8em;
+
+    font-weight: bold;
+
+    margin-right: 10px;
+
+}
+
+
+
+.med-title {
+
+    font-size: 1.1em;
+
+    margin: 0;
+
+    flex-grow: 1;
+
+    color: #1f2937;
+
+}
+
+
+
+/* --- Review Step --- */
+
+.review-box {
+
+    border: 2px solid #e5e7eb;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    background-color: #fff;
+
+}
+
+
+
+.review-section {
+
+    margin-bottom: 15px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px dashed #eee;
+
+}
+
+.review-section:last-child {
+
+    border-bottom: none;
+
+    padding-bottom: 0;
+
+    margin-bottom: 0;
+
+}
+
+
+
+.review-title {
+
+    font-size: 1.1em;
+
+    color: #4f46e5;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.med-review-list {
+
+    list-style: none;
+
+    padding-left: 0;
+
+    font-size: 0.95em;
+
+}
+
+
+
+.note-text {
+
+    font-style: italic;
+
+    color: #4b5563;
+
+}
+
+
+
+/* 🛑 ADDED FIX: Ensure all content in the Review Box on the left is dark 🛑 */
+
+/* This fixes the invisible text issue on the "Final Review & Save" step. */
+
+.review-box * {
+
+    color: #333333 !important;
+
+}
+
+/* ------------------------------------------------------------------------- */
+
+
+
+
+
+/* --- Preview Panel --- */
+
+.preview-panel h3 {
+
+    font-size: 1.2em;
+
+    margin-bottom: 15px;
+
+    color: #1f2937;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 5px;
+
+}
+
+
+
+.preview-box {
+
+    height: 550px; /* Fixed height for consistent layout */
+
+    overflow-y: auto;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    background-color: #fff;
+
+    font-size: 0.9em;
+
+    line-height: 1.4;
+
+    /* Original Fix (kept for base text) */
+
+    color: #333333 !important; 
+
+}
+
+
+
+
+
+/* 🛑 IMPROVED FIX: Ensure all nested elements in the preview box are dark 🛑 */
+
+/* This resolves the issue where injected elements (like diagnosis and meds) were invisible */
+
+.preview-box * {
+
+    color: #333333 !important;
+
+}
+
+/* ------------------------------------------------------------------------- */
+
+
+
+
+
+/* Base styles for print preview content */
+
+.preview-box .header-section { text-align: center; margin-bottom: 10px; }
+
+.preview-box .clinic-name { font-size: 1.3em; font-weight: bold; color: #1f2937; margin-bottom: 3px;}
+
+.preview-box .doctor-info, .preview-box .doctor-contact { font-size: 0.8em; color: #4b5563; }
+
+.preview-box .divider { border: 0; height: 1px; background-color: #e5e7eb; margin: 10px 0; }
+
+.preview-box h3 { color: #10b981; border-bottom: 1px solid #d1fae5; padding-bottom: 3px; margin-top: 15px; font-size: 1em; }
+
+.preview-box .med-item { margin-bottom: 10px; padding: 5px; border-left: 3px solid #3b82f6; background: #f0f9ff; }
+
+.preview-box .med-details { list-style: none; padding-left: 10px; font-size: 0.9em; }
+
+
+
+
+
+
+
+/* --- Buttons and Footer --- */
+
+.navigation-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 30px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eee;
+
+}
+
+
+
+.action-buttons-review {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+}
+
+
+
+.btn-primary, .btn-secondary, .btn-save, .btn-print, .btn-remove {
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s, border-color 0.2s;
+
+    border: 1px solid transparent;
+
+}
+
+
+
+.btn-primary {
+
+    background-color: #4f46e5;
+
+    color: white;
+
+}
+
+.btn-primary:hover {
+
+    background-color: #4338ca;
+
+}
+
+.btn-primary.hidden {
+
+    visibility: hidden;
+
+}
+
+
+
+.btn-secondary {
+
+    background-color: #ffffff;
+
+    color: #4f46e5;
+
+    border-color: #c7d2fe;
+
+}
+
+.btn-secondary:hover {
+
+    background-color: #f3f4f6;
+
+}
+
+.btn-secondary:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    background-color: #ffffff;
+
+    color: #9ca3af;
+
+}
+
+
+
+.btn-save {
+
+    background-color: #10b981;
+
+    color: white;
+
+    flex-grow: 1;
+
+}
+
+.btn-save:hover {
+
+    background-color: #059669;
+
+}
+
+
+
+.btn-print {
+
+    background-color: #3b82f6;
+
+    color: white;
+
+    flex-grow: 1;
+
+}
+
+.btn-print:hover {
+
+    background-color: #2563eb;
+
+}
+
+
+
+.btn-remove {
+
+    background-color: #fef2f2;
+
+    color: #ef4444;
+
+    padding: 5px 10px;
+
+    border-color: #fecaca;
+
+    font-size: 0.8em;
+
+}
+
+.btn-remove:hover {
+
+    background-color: #fee2e2;
+
+}
+
+
+
+.warning-box {
+
+    padding: 15px;
+
+    border: 1px solid #fde68a;
+
+    background-color: #fffbeb;
+
+    color: #b45309;
+
+    border-radius: 6px;
+
+    font-size: 0.9em;
+
+    margin-top: 15px;
+
+}
